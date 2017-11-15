@@ -1,25 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Car Rental</title>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<meta content="ie=edge" http-equiv="X-UA-Compatible">
+	<title>Car Rental</title>
 </head>
 <body>
-    <h1>Business Name</h1>
-    <p id="name"></p>
-    
-    <h2>Economy Cars Available</h2>
-    <p id ="econ"></p>
-    
-    <h2>Midsize Cars Available</h2>
-    <p id = "mid"></p>
-    
-    <button type ="button" onclick="update()">Update Availability</button>
-    <button type ="button" onclick="econCars()">Rent 1 Economy Car</button>
-    <button type ="button" onclick="midCars()">Rent 1 Midsize Car</button>
-
-    <script src="script.js"></script>
+	<h1>Business Name</h1>
+	<p id="name"></p>
+	<h2>Car Types</h2>
+	<h3>Economy Cars</h3>
+	<p id="econa"></p>
+	<p id="econp"></p>
+	<h3>Midsize Cars</h3>
+	<p id="mida"></p>
+	<p id="midp"></p>
+	<h2>Rent a Car</h2>
+	<form id="renterinfo" name="renterinfo">
+		Name: <input id="rname" name="name" type="text" value=""><br>
+		<br>
+		<select id="carchoice" onchange="chooseCar()">
+			<option value="">
+				None
+			</option>
+			<option value="economy">
+				Economy Car
+			</option>
+			<option value="midsize">
+				Midsize Car
+			</option>
+		</select> <button onclick="rentCar()" type="button">Rent Car</button>
+	</form><br>
+	<br>
+	<button onclick="update()" type="button">Update Availability</button> 
+	<script src="script3.js">
+	</script>
 </body>
 </html>
