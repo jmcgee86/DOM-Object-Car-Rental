@@ -16,19 +16,25 @@
 	<h3>Midsize Cars</h3>
 	<p id="mida"></p>
 	<p id="midp"></p>
+	<h3>Luxury Cars</h3>
+	<p id = "luxa"></p>
+	<p id = "luxp"></p>
 	<h2>Rent a Car</h2>
 	<form id="renterinfo" name="renterinfo">
 		Name: <input id="rname" name="name" type="text" value=""><br>
 		<br>
 		<select id="carchoice" onchange="chooseCar()">
 			<option value="">
-				None
+				Choose a Car Tyoe
 			</option>
 			<option value="economy">
 				Economy Car
 			</option>
 			<option value="midsize">
 				Midsize Car
+			</option>
+			<option value="luxury">
+				Luxury Car
 			</option>
 		</select> <button onclick="rentCar()" type="button">Rent Car</button>
 	</form><br>
