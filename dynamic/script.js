@@ -1,48 +1,46 @@
 var carRental = {
 	name: "Jim's Car Rentals",
-	econCars: 20,
-	econBooked: 0,
-	econPrice: "$100",
-	midCars: 20,
-	midBooked: 0,
-	midPrice: "$140",
-	luxCars: 10,
-	luxBooked:0,
-	luxPrice: "$190",
 	cars: [
 		{
 			type: "Economy",
 			price: "$45",
 			quantity:20,
-			booked: 0
+			booked: 0,
+			available: 20
 		},
 		{
 			type: "Midsize",
 			price: "$65",
 			quantity:20,
-			booked: 0
+			booked: 0,
+			available: 20
 		},
 		{
 			type: "Luxury",
 			price: "$90",
 			quantity:10,
-			booked: 0
+			booked: 0,
+			available: 20
 		},
 		{
 			type: "Electric",
 			price: "$75",
 			quantity:20,
-			booked: 0
+			booked: 0,
+			available: 20
 		}
 		],
 	econAvail: function() {
-		return this.econCars - this.econBooked;
+		return this.cars[0].quantity - this.this.cars[0].booked;
 	},
 	midAvail: function() {
-		return this.midCars - this.midBooked;
+		return this.cars[1].quantity - this.this.cars[1].booked;
 	},
 	luxAvail: function() {
-		return this.luxCars - this.luxBooked;
+		return this.cars[2].quantity - this.this.cars[2].booked;
+	},
+	elecAvail: function(){
+		this.cars[3].quantity - this.this.cars[3].booked
 	},
 	bookEcon: function() {
 		this.cars[0].booked++;
@@ -53,6 +51,9 @@ var carRental = {
 	
 	bookLux: function() {
 		this.cars[2].booked++;
+	},
+	bookElec: function() {
+		this.cars[3].booked++;
 	}
 };
 var rentals = {
@@ -136,11 +137,38 @@ function rentCar() {
 	} else alert("Please enter your name");
 }
 
+
+//var form = document.createElement("SELECT");
+//form.setAttribute("id", "options")
+//document.getElementById("renterinfo").prepend(form);
+
+
 for (var i=0; i < carRental.cars.length; i++){
 	console.log("start");
 	var dropdown = document.createElement("OPTION");
-	dropdown.setAttribute("value", carRental.cars[i].type);
+	dropdown.setAttribute("value", i)//carRental.cars[i].type);
 	dropdown.innerHTML = carRental.cars[i].type;
+	var chosenCar = i;
+    //var chosen = i;
+    //dropdown.setAttribute("onchange", "displayDetails(" + i + ")");
 	document.getElementById("carchoice").appendChild(dropdown);
 	console.log("stop");
 	}
+
+//for (var i=0; i < carRental.cars.length; i++){
+//	console.log("start");
+	//var form = document.createElement("SELECT");
+//	var dropdown = document.createElement("OPTION");
+//	dropdown.setAttribute("value", carRental.cars[i].type);
+//	dropdown.innerHTML = carRental.cars[i].type;
+//	document.setAttribute("onclick", "displayDetails(" + i + ")");
+	//document.getElementById("carchoice").appendChild(form);
+	//form.setAttribute("onchange", "displayDetails(" + i + ")");
+//	document.getElementById("carchoice").appendChild(dropdown);
+//	console.log("stop");
+//		}
+function displayDetails(value){
+    console.log("test");
+   document.getElementById("price").innerHTML = carRental.cars[value].price;
+   document.getElementById("available").innerHTML = carRental.cars[value].available;
+}

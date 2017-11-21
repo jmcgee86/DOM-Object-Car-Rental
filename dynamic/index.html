@@ -11,9 +11,11 @@
 	<p id="name"></p>
 	<h2>Car Types</h2>
 	<form id="renterinfo" name="renterinfo">
-			<select id="carchoice" onchange="chooseCar()">
+		<select id = "carchoice" onchange = "displayDetails(value)">
+			
+			
+		</select>
 		
-		</select> 
 		<br><br>Name: <input id="rname" name="name" type="text" value=""><br><br>
 		<button onclick="rentCar()" type="button">Rent Car</button>
 	</form><br>
@@ -22,8 +24,8 @@
 	
 	<h2>Car Info</h2>
 	
-<p id = carsAvail></p>
-<p id = carPrice></p>
+<p id = "available"></p>
+<p id = "price"></p>
 
 	<script src="script.js">
 	</script>
