@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<meta content="ie=edge" http-equiv="X-UA-Compatible">
+	<title>Car Rental</title>
+</head>
+<body>
+	<h1>Business Name</h1>
+	<p id="name"></p>
+	<h2>Car Types</h2>
+	<form id="renterinfo" name="renterinfo">
+			<select id="carchoice" onchange="chooseCar()">
+		
+		</select> 
+		<br><br>Name: <input id="rname" name="name" type="text" value=""><br><br>
+		<button onclick="rentCar()" type="button">Rent Car</button>
+	</form><br>
+	<br>
+	<button onclick="update()" type="button">Update Availability</button> 
+	
+	<h2>Car Info</h2>
+	
+<p id = carsAvail></p>
+<p id = carPrice></p>
+
+	<script src="script.js">
+	</script>
+</body>
+</html>
+
+<!--	<option value="">
+				Choose a Car Type
+			</option>
+			<option value="economy">
+				Economy Car
+			</option>
+			<option value="midsize">
+				Midsize Car
+			</option>
+			<option value="luxury">
+				Luxury Car
+			</option> -->
