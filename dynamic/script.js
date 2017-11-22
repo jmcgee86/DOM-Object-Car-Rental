@@ -4,7 +4,7 @@ var carRental = {
 		{
 			type: "Economy",
 			price: "$45",
-			quantity:20,
+			quantity:2,
 			booked: 0,
 		},
 		{
@@ -58,7 +58,7 @@ for (var i=0; i < carRental.cars.length; i++){
 	dropdown.innerHTML = carRental.cars[i].type;
 	document.getElementById("carchoice").appendChild(dropdown);
 	document.getElementById("price").innerHTML = carRental.cars[0].price;
-	document.getElementById("available").innerHTML = carRental.carAvail(i);
+	document.getElementById("available").innerHTML = carRental.carAvail(0);
 	}
 //Displays details of Car Selected
 function displayDetails(value){
@@ -67,11 +67,12 @@ function displayDetails(value){
    	var carMenu = document.getElementById("carchoice");
 	var noneLeft = document.getElementById(value); 
 	carMenu.removeChild(noneLeft);
-	value = 0;
+	value = document.getElementById("carchoice").value;
    }
    document.getElementById("price").innerHTML = carRental.cars[value].price;
    document.getElementById("available").innerHTML = carRental.carAvail(value);
    }
+
 
 //Rents out selected car and adds name and car type to array of renters
 function carRent(){
