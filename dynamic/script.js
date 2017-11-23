@@ -79,7 +79,7 @@ function displayDetails(value){
    }
 
 
-//Rents out selected car and adds name and car type to array of renters
+//Rents out selected car and adds name and car type to array of renters, adds to revenue, and displays updated availability
 function carRent(){
 var renterName = document.getElementById("rname").value;
 if (renterName==""){
@@ -95,9 +95,9 @@ if (carRental.carAvail(carType)==0){
 	alert("No cars of that type available");
 	return;
 }
-carRental.totalRev(carType);
-carRental.bookCars(carType);
-rentals.addRenter(renterName, carType);
-displayDetails(carType);
+carRental.totalRev(carType);// adds price of car selected to total revenue
+carRental.bookCars(carType);//adds one to "booked" of selected car
+rentals.addRenter(renterName, carType);//adds renter name and car type to rentals.renters array
+displayDetails(carType);//displays updated availability and price
 alert ("You have rented a car")
 };
