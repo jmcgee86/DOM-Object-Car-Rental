@@ -1,27 +1,28 @@
 var carRental = {
 	name: "Jim's Car Rentals",
+	revenue:0,
 	cars: [
 		{
 			type: "Economy",
-			price: "$45",
+			price: 45,
 			quantity:2,
 			booked: 0,
 		},
 		{
 			type: "Midsize",
-			price: "$65",
+			price: 65,
 			quantity:20,
 			booked: 0,
 		},
 		{
 			type: "Luxury",
-			price: "$90",
+			price: 90,
 			quantity:1,
 			booked: 0,
 		},
 		{
 			type: "Electric",
-			price: "$75",
+			price: 75,
 			quantity:20,
 			booked: 0,
 		}
@@ -32,6 +33,10 @@ var carRental = {
 	},	
 	bookCars: function(i) {
 		this.cars[i].booked++;
+	},
+	
+	totalRev: function(carType){
+		this.revenue=this.cars[carType].price+this.revenue;
 	}
 };	
 
@@ -90,6 +95,7 @@ if (carRental.carAvail(carType)==0){
 	alert("No cars of that type available");
 	return;
 }
+carRental.totalRev(carType);
 carRental.bookCars(carType);
 rentals.addRenter(renterName, carType);
 displayDetails(carType);
