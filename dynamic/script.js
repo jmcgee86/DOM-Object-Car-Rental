@@ -58,8 +58,8 @@ document.getElementById("name").innerHTML = carRental.name;
 //Dynamic Dropdown
 for (var i=0; i < carRental.cars.length; i++){
 	var dropdown = document.createElement("OPTION");
-	dropdown.setAttribute("value", i)
-	dropdown.setAttribute("id", i)
+	dropdown.setAttribute("value", i);
+	dropdown.setAttribute("id", i);
 	dropdown.innerHTML = carRental.cars[i].type;
 	document.getElementById("carchoice").appendChild(dropdown);
 	document.getElementById("price").innerHTML = carRental.cars[0].price;
@@ -67,7 +67,6 @@ for (var i=0; i < carRental.cars.length; i++){
 	}
 //Displays details of Car Selected
 function displayDetails(value){
-    //console.log("test");
    if (carRental.carAvail(value) == 0){
    	var carMenu = document.getElementById("carchoice");
 	var noneLeft = document.getElementById(value); 
@@ -77,7 +76,6 @@ function displayDetails(value){
    document.getElementById("price").innerHTML = carRental.cars[value].price;
    document.getElementById("available").innerHTML = carRental.carAvail(value);
    }
-
 
 //Rents out selected car and adds name and car type to array of renters, adds to revenue, and displays updated availability
 function carRent(){
@@ -99,5 +97,5 @@ carRental.totalRev(carType);// adds price of car selected to total revenue
 carRental.bookCars(carType);//adds one to "booked" of selected car
 rentals.addRenter(renterName, carType);//adds renter name and car type to rentals.renters array
 displayDetails(carType);//displays updated availability and price
-alert ("You have rented a car")
-};
+alert ("You have rented a car");
+}
